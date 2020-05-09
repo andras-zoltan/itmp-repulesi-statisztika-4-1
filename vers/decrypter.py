@@ -13,7 +13,24 @@ class Decrypter:
         raise NotImplementedError()
 
     def calc_fibonacci_50(self) -> int:
-        raise NotImplementedError()
+        n = 50
+
+        return self.calculate_fibonacci(n)
+
+    @staticmethod
+    def calculate_fibonacci(n):
+
+        if n <= 1:
+            return n
+
+        prev = 0
+        fibonacci = 1
+
+        for i in range(n - 1):
+            fibonacci += prev
+            prev = fibonacci - prev
+
+        return fibonacci
 
 
 def main():
