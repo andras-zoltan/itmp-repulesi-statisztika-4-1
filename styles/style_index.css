@@ -1,0 +1,11 @@
+img {
+    width: 200px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: green;
+}
