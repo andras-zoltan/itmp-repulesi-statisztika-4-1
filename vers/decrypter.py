@@ -1,17 +1,25 @@
 class Decrypter:
+    CAESAR_FILE = "caesar.txt"
+    COUNT_XYZ_FILE = "count-x-y-w.txt"
+    AFTER_Z_FILE = "after-z.txt"
 
-    def __init__(self, filePath: str):
-        self.__filePath = filePath
-        self.__load_file()
+    __files_paths = ()
+    __files_and_contents_dict = {}
+
+    def __init__(self, encrypted_file: str = CAESAR_FILE):
+        self.__files_paths = (encrypted_file, self.COUNT_XYZ_FILE, self.AFTER_Z_FILE)
+        self.__load_files()
 
     def decrypt(self) -> str:
-        offset = self.count_xyz() + self.count_xyz() + self.avg_z_count() + self.calc_fibonacci_50()
+        offset = self.count_xyz() + self.avg_z_count() + self.calc_fibonacci_50()
 
     def count_xyz(self) -> int:
-        raise NotImplementedError()
+        xyz_text = self.get_text_content(self.COUNT_XYZ_FILE)
+
+        return xyz_text.count('X') + xyz_text.count('Y') - xyz_text.count('W')
 
     def avg_z_count(self) -> int:
-        raise NotImplementedError()
+        raise NotImplementedError
 
     def calc_fibonacci_50(self) -> int:
         n = 50
@@ -40,22 +48,28 @@ class Decrypter:
         min_value, max_value = int(num_to_str[0]), int(num_to_str[len(num_to_str) - 1])
         return max_value - min_value
 
-    def __load_file(self):
+    def __load_files(self) -> None:
+        for file_path in self.__files_paths:
+            self.__files_and_contents_dict[file_path] = self.__load(file_path)
+
+    @staticmethod
+    def __load(file_path: str) -> str:
         try:
-            file = open(self.__filePath, "r", encoding="UTF-8")
-            self.__encrypted_text = file.readlines()
+            file = open(file_path, "r", encoding="UTF-8")
+            text = ''.join(file.readlines())
 
             file.close()
         except Exception as ex:
             print("Fájl beolvasás hiba: ", ex)
+        else:
+            return text
 
-    @property
-    def encrypted_text(self):
-        return self.__encrypted_text
+    def get_text_content(self, file_name: str) -> str:
+        return self.__files_and_contents_dict.get(file_name)
 
 
 def main():
-    plain_text = Decrypter("caesar.txt").decrypt()
+    plain_text = Decrypter().decrypt()
 
 
 if __name__ == "__main__":
