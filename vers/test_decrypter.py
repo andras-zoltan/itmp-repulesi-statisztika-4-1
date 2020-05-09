@@ -24,6 +24,9 @@ class TestDecrypter(unittest.TestCase):
     def test_calc_fibonacci_50(self):
         self.assertEqual(self.__decrypter.calc_fibonacci_50(), 4)
 
+    def test_file_load(self):
+        self.assertTrue(len(self.__decrypter.encrypted_text) > 0)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,10 +1,11 @@
 class Decrypter:
 
-    def __init__(self, src: str):
-        self.__str = str
+    def __init__(self, filePath: str):
+        self.__filePath = filePath
+        self.__load_file()
 
     def decrypt(self) -> str:
-        raise NotImplementedError()
+        offset = self.count_xyz() + self.count_xyz() + self.avg_z_count() + self.calc_fibonacci_50()
 
     def count_xyz(self) -> int:
         raise NotImplementedError()
@@ -38,6 +39,19 @@ class Decrypter:
         num_to_str = str(num)
         min_value, max_value = int(num_to_str[0]), int(num_to_str[len(num_to_str) - 1])
         return max_value - min_value
+
+    def __load_file(self):
+        try:
+            file = open(self.__filePath, "r", encoding="UTF-8")
+            self.__encrypted_text = file.readlines()
+
+            file.close()
+        except Exception as ex:
+            print("Fájl beolvasás hiba: ", ex)
+
+    @property
+    def encrypted_text(self):
+        return self.__encrypted_text
 
 
 def main():
