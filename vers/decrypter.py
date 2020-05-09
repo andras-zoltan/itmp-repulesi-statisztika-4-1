@@ -15,10 +15,11 @@ class Decrypter:
     def calc_fibonacci_50(self) -> int:
         n = 50
 
-        return self.calculate_fibonacci(n)
+        fib_50 = self.calculate_fibonacci(n)
+        return self.subtract_min_max(fib_50)
 
     @staticmethod
-    def calculate_fibonacci(n):
+    def calculate_fibonacci(n: int) -> int:
 
         if n <= 1:
             return n
@@ -31,6 +32,12 @@ class Decrypter:
             prev = fibonacci - prev
 
         return fibonacci
+
+    @staticmethod
+    def subtract_min_max(num: int) -> int:
+        num_to_str = str(num)
+        min_value, max_value = int(num_to_str[0]), int(num_to_str[len(num_to_str) - 1])
+        return max_value - min_value
 
 
 def main():
