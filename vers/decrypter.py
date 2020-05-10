@@ -14,6 +14,22 @@ class Decrypter:
         self.__files_paths = (encrypted_file, self.COUNT_XYZ_FILE, self.AFTER_Z_FILE)
         self.__load_files()
 
+    def __load_files(self) -> None:
+        for file_path in self.__files_paths:
+            self.__files_and_contents_dict[file_path] = self.__load(file_path)
+
+    @staticmethod
+    def __load(file_path: str) -> str:
+        try:
+            file = open(file_path, "r", encoding="UTF-8")
+            text = ''.join(file.readlines())
+
+            file.close()
+        except Exception as ex:
+            print("Fájl beolvasás hiba: ", ex)
+        else:
+            return text
+
     def decrypt(self) -> str:
         offset = self.count_xyz() + self.avg_z_count() + self.calc_fibonacci_50()
 
@@ -55,22 +71,6 @@ class Decrypter:
         num_to_str = str(num)
         min_value, max_value = int(num_to_str[0]), int(num_to_str[len(num_to_str) - 1])
         return max_value - min_value
-
-    def __load_files(self) -> None:
-        for file_path in self.__files_paths:
-            self.__files_and_contents_dict[file_path] = self.__load(file_path)
-
-    @staticmethod
-    def __load(file_path: str) -> str:
-        try:
-            file = open(file_path, "r", encoding="UTF-8")
-            text = ''.join(file.readlines())
-
-            file.close()
-        except Exception as ex:
-            print("Fájl beolvasás hiba: ", ex)
-        else:
-            return text
 
     def get_text_content(self, file_name: str) -> str:
         return self.__files_and_contents_dict.get(file_name)
