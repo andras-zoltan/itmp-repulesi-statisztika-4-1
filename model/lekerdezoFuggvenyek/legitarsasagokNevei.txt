@@ -1,0 +1,41 @@
+/**
+ * A Query osztály
+ *
+ * legitarsasagokNevei()
+ *
+ * nevû függvénye:
+ *
+ * A "carrier" nevû adattáblából a légitársaságok neveit olvassa ki abc sorrendben
+ * Visszatérési értéke egy mátrix, melyben minden vektornak egyetlen eleme van: a társaság neve
+ */ 
+
+    public function legitarsasagokNevei(){
+        $lekerdezes = "SELECT name FROM carrier ORDER BY name";
+        $select = $this->db->prepare($lekerdezes);
+        if($select->execute()){
+            return $select->fetchAll();
+        }
+        else {
+            print "Hiba<br>";
+            print "<pre>";
+            print_r($select->errorInfo());
+            print "</pre>";
+        }
+    }
+
+/**
+ * Meghívása:
+ *
+ * A $carriers nevû mátrix értékadásának jobb oldalán
+ *
+ * A mátrix elemei vektorok, melyek egyetlen elembõl állnak: a tárasaság neve
+ */ 
+
+        include_once 'Query.php';
+        $query = new Query();
+        $carriers = $query->legitarsasagokNevei();
+        print '<ul>';
+        foreach ($carriers as $carrier) {
+            print '<li><a href="#">'.$carrier[0].'</a></li>';
+        }
+        print '</ul>';
