@@ -1,3 +1,6 @@
+import re
+
+
 class Decrypter:
     CAESAR_FILE = "caesar.txt"
     COUNT_XYZ_FILE = "count-x-y-w.txt"
@@ -13,13 +16,26 @@ class Decrypter:
     def decrypt(self) -> str:
         offset = self.count_xyz() + self.avg_z_count() + self.calc_fibonacci_50()
 
+        encrypted_text = self.get_text_content(self.CAESAR_FILE)
+
+        plan_text = list(map(lambda ch: chr(ord(ch)+offset), encrypted_text))
+        print(plan_text)
+
     def count_xyz(self) -> int:
         xyz_text = self.get_text_content(self.COUNT_XYZ_FILE)
 
         return xyz_text.count('X') + xyz_text.count('Y') - xyz_text.count('W')
 
     def avg_z_count(self) -> int:
-        raise NotImplementedError
+        avg_z_text = self.get_text_content(self.AFTER_Z_FILE)
+
+        pattern = re.compile('Z\d+')
+
+        all_matches = re.findall(pattern, avg_z_text)
+
+        # print(sum(list(map(lambda match: int(match[1:]), all_matches))) // len(all_matches))
+
+        return sum(list(map(lambda match: int(match[1:]), all_matches))) // len(all_matches)
 
     def calc_fibonacci_50(self) -> int:
         n = 50
