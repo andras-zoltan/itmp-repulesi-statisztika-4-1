@@ -1,0 +1,39 @@
+/**
+ * A Query osztály
+ *
+ * osszesJarat($legitarsasagAzonosito)
+ *
+ * nevû függvénye:
+ *
+ * A "flight" nevû adattáblában összeadja az arr_flights oszlopok értékeit azon sorokban,
+ * amelyekben a carrierid megegyezik a paraméterként kapott változó értékével.
+ * Visszatérési értéke egy egész szám, a lekérdezés eredménytömbjének 0. eleme
+ */ 
+
+    public function osszesJarat($legitarsasag){
+        $lekerdezes = "SELECT SUM(arr_flights) FROM flight "
+                . "WHERE carrierid = :l";
+        $select = $this->db->prepare($lekerdezes);
+        $select->bindParam(":l", $legitarsasag);
+        if($select->execute()){
+            return $select->fetch()[0];
+        }
+        else {
+            print "Hiba<br>";
+            print "<pre>";
+            print_r($select->errorInfo());
+            print "</pre>";
+            return -1;
+        }
+    }
+
+/**
+ * Meghívása:
+ *
+ * A $sum nevû változó értékadásának jobb oldalán
+ */ 
+
+        include_once 'Query.php';
+        $query = new Query();
+
+	$sum = $query->osszesJarat(5) // Ahol 5 az 5-ös azonosítójú társaság id-je a carrier táblából
