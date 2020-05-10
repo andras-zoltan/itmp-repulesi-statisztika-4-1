@@ -1,5 +1,4 @@
 import re
-import string
 
 
 class Decrypter:
@@ -35,12 +34,12 @@ class Decrypter:
 
         encrypted_text = (self.get_text_content(self.CAESAR_FILE))
         print("encrypted_text:")
-        print("-"*20)
+        print("-" * 20)
         print(encrypted_text)
 
         plain_text = self.decrypt_text(encrypted_text, offset)
         print("plain text:")
-        print("-"*20)
+        print("-" * 20)
         print(''.join(plain_text))
 
     def calc_offset(self):
