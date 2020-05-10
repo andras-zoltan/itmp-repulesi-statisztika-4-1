@@ -1,0 +1,42 @@
+/**
+ * A Query osztály
+ *
+ * toroltJaratokAranya($legitarsasagAzonosito)
+ *
+ * nevû függvénye:
+ *
+ * A "flight" nevû adattáblában összeadja az arr_cancelled oszlopok értékeit
+ * valamint összeadja az arr_flights oszlopok értékeit azon sorokban,
+ * amelyekben a carrierid megegyezik a paraméterként kapott változó értékével,
+ * majd a kettõ hányadosát megszorozza 100-zal.
+ * Visszatérési értéke egy 1 tizedesjegy pontosságú valós szám, a lekérdezés eredménytömbjének 0. eleme
+ */ 
+
+    public function toroltJaratokAranya($legitarsasag){
+        $lekerdezes = "SELECT SUM(arr_cancelled)/SUM(arr_flights)*100 FROM flight "
+                . "WHERE carrierid = :l";
+        $select = $this->db->prepare($lekerdezes);
+        $select->bindParam(":l", $legitarsasag);
+        if($select->execute()){
+            return sprintf("%.1f", $select->fetch()[0]);
+        }
+        else {
+            print "Hiba<br>";
+            print "<pre>";
+            print_r($select->errorInfo());
+            print "</pre>";
+            return -1;
+        }
+    }
+
+/**
+ * Meghívása:
+ *
+ * A $arany nevû változó értékadásának jobb oldalán
+ */ 
+
+        include_once 'Query.php';
+        $query = new Query();
+
+	$arany = $query->toroltJaratokAranya(5) // Ahol 5 az 5-ös azonosítójú társaság id-je a carrier táblából
+	print "$arany%";
