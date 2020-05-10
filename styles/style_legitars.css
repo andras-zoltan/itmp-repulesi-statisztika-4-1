@@ -6,3 +6,17 @@ body {
     width: 80vw;
     margin: auto;
 }
+
+img {
+    width: 300px;
+    height: 300px;
+}
+
+.media-body {
+    margin-right: 10vw;
+}
+
+.kisgyerek {
+    width: 70vw;
+    margin: auto;
+}
