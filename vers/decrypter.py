@@ -31,7 +31,7 @@ class Decrypter:
             return text
 
     def decrypt(self) -> str:
-        offset = self.count_xyz() + self.avg_z_count() + self.calc_fibonacci_50()
+        offset = self.calc_offset()
 
         encrypted_text = (self.get_text_content(self.CAESAR_FILE))
         print("encrypted_text:")
@@ -42,6 +42,9 @@ class Decrypter:
         print("plain text:")
         print("-"*20)
         print(''.join(plain_text))
+
+    def calc_offset(self):
+        return self.count_xyz() + self.avg_z_count() + self.calc_fibonacci_50()
 
     @staticmethod
     def decrypt_text(encrypted_text: str, offset: int):

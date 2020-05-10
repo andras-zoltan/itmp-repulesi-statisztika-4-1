@@ -13,6 +13,12 @@ class TestDecrypter(unittest.TestCase):
         self.assertTrue(len(self.__decrypter.get_text_content('count-x-y-w.txt')) > 0)
         self.assertTrue(len(self.__decrypter.get_text_content('after-z.txt')) > 0)
 
+    def test_count_xyz(self) -> None:
+        self.assertEqual(self.__decrypter.count_xyz(), 8)
+
+    def test_avg_z_count(self) -> None:
+        self.assertEqual(self.__decrypter.avg_z_count(), 4)
+
     def test_calculate_fibonacci(self) -> None:
         self.assertEqual(Decrypter.calculate_fibonacci(0), 0)
         self.assertEqual(Decrypter.calculate_fibonacci(1), 1)
@@ -29,8 +35,8 @@ class TestDecrypter(unittest.TestCase):
     def test_calc_fibonacci_50(self) -> None:
         self.assertEqual(self.__decrypter.calc_fibonacci_50(), 4)
 
-    def test_count_xyz(self) -> None:
-        self.assertEqual(self.__decrypter.count_xyz(), 8)
+    def test_calc_offset(self) -> None:
+        self.assertEqual(self.__decrypter.calc_offset(), 16)
 
 
 if __name__ == '__main__':
