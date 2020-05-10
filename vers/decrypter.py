@@ -33,6 +33,36 @@ class Decrypter:
     def decrypt(self) -> str:
         offset = self.count_xyz() + self.avg_z_count() + self.calc_fibonacci_50()
 
+        encrypted_text = (self.get_text_content(self.CAESAR_FILE))
+        print("encrypted_text:")
+        print("-"*20)
+        print(encrypted_text)
+
+        plain_text = self.decrypt_text(encrypted_text, offset)
+        print("plain text:")
+        print("-"*20)
+        print(''.join(plain_text))
+
+    @staticmethod
+    def decrypt_text(encrypted_text: str, offset: int):
+        return list(map(
+            lambda letter: Decrypter.__decrypt_letter(letter, offset) if re.match('[a-z]|[A-Z]', letter) else letter,
+            encrypted_text))
+
+    @staticmethod
+    def __decrypt_letter(letter: str, offset: int) -> str:
+        if 'A' <= letter <= 'Z':
+            return chr(
+                ord(letter) - offset if (ord(letter) - offset) >= ord('A') else ord(
+                    'Z') - ord('A') + ord(letter) - offset + 1)
+
+        if 'a' <= letter <= 'z':
+            return chr(
+                ord(letter) - offset if (ord(letter) - offset) >= ord('a') else ord('z') - ord('a') + ord(
+                    letter) - offset + 1)
+
+        raise AttributeError('A megadott karakter nem dekódolható!!!')
+
     def count_xyz(self) -> int:
         xyz_text = self.get_text_content(self.COUNT_XYZ_FILE)
 
