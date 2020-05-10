@@ -1,4 +1,5 @@
 import re
+import string
 
 
 class Decrypter:
@@ -16,11 +17,6 @@ class Decrypter:
     def decrypt(self) -> str:
         offset = self.count_xyz() + self.avg_z_count() + self.calc_fibonacci_50()
 
-        encrypted_text = self.get_text_content(self.CAESAR_FILE)
-
-        plan_text = list(map(lambda ch: chr(ord(ch)+offset), encrypted_text))
-        print(plan_text)
-
     def count_xyz(self) -> int:
         xyz_text = self.get_text_content(self.COUNT_XYZ_FILE)
 
@@ -29,11 +25,8 @@ class Decrypter:
     def avg_z_count(self) -> int:
         avg_z_text = self.get_text_content(self.AFTER_Z_FILE)
 
-        pattern = re.compile('Z\d+')
-
-        all_matches = re.findall(pattern, avg_z_text)
-
-        # print(sum(list(map(lambda match: int(match[1:]), all_matches))) // len(all_matches))
+        pattern = re.compile('Z\d')
+        all_matches = pattern.findall(avg_z_text)
 
         return sum(list(map(lambda match: int(match[1:]), all_matches))) // len(all_matches)
 
@@ -45,7 +38,6 @@ class Decrypter:
 
     @staticmethod
     def calculate_fibonacci(n: int) -> int:
-
         if n <= 1:
             return n
 
