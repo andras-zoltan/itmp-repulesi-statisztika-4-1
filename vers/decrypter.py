@@ -9,6 +9,8 @@ class Decrypter:
     __files_paths = ()
     __files_and_contents_dict = {}
 
+    __plain_text: str
+
     def __init__(self, encrypted_file: str = CAESAR_FILE):
         self.__files_paths = (encrypted_file, self.COUNT_XYZ_FILE, self.AFTER_Z_FILE)
         self.__load_files()
@@ -37,10 +39,10 @@ class Decrypter:
         print("-" * 20)
         print(encrypted_text)
 
-        plain_text = self.decrypt_text(encrypted_text, offset)
+        self.__plain_text = ''.join(self.decrypt_text(encrypted_text, offset))
         print("plain text:")
         print("-" * 20)
-        print(''.join(plain_text))
+        print(self.__plain_text)
 
     def calc_offset(self):
         return self.count_xyz() + self.avg_z_count() + self.calc_fibonacci_50()
@@ -84,6 +86,14 @@ class Decrypter:
         fib_50 = self.calculate_fibonacci(n)
         return self.subtract_min_max(fib_50)
 
+    def save_plain_text(self, file_name: str) -> None:
+        try:
+            file = open(file_name, mode='w', encoding="UTF-8")
+            file.write(self.__plain_text)
+            file.close()
+        except Exception as ex:
+            print("Fájl mentése meghiusult!", ex)
+
     @staticmethod
     def calculate_fibonacci(n: int) -> int:
         if n <= 1:
@@ -109,7 +119,9 @@ class Decrypter:
 
 
 def main():
-    plain_text = Decrypter().decrypt()
+    decrypter = Decrypter()
+    decrypter.decrypt()
+    decrypter.save_plain_text('vers.txt')
 
 
 if __name__ == "__main__":
