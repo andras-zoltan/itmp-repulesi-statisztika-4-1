@@ -1,0 +1,42 @@
+﻿/**
+ * A Query osztály
+ *
+ * leglatogatottabbRepter($legitarsasagAzonosito)
+ *
+ * nevű függvénye:
+ *
+ * A "flight" és az "airpot" nevű adattáblákban megkeresi azt a repteret,
+ * ahol a paraméterként megadott társaság járatai legtöbbször leszálltak.
+ * Visszatérési értéke egy két elemű vektor.
+ */ 
+
+    public function leglatogatottabbRepter($legitarsasag){
+        $lekerdezes = "SELECT airport.initial, airport.name FROM airport"
+                . " INNER JOIN flight ON airport.id=flight.airportid"
+                . " WHERE flight.carrierid=:l AND flight.arr_flights="
+                . "(SELECT MAX(arr_flights)FROM flight WHERE carrierid=:l)";
+        $select = $this->db->prepare($lekerdezes);
+        $select->bindParam(":l", $legitarsasag);
+        if($select->execute()){
+            return $select->fetch();
+        }
+        else {
+            print "Hiba<br>";
+            print "<pre>";
+            print_r($select->errorInfo());
+            print "</pre>";
+            return -1;
+        }
+    }    
+
+/**
+ * Meghívása:
+ *
+ * A $repterekSzama nevű változó értékadásának jobb oldalán
+ */ 
+
+        include_once 'Query.php';
+        $query = new Query();
+
+	$repterekSzama = $query-leglatogatottabbRepter(5); // Ahol 5 az 5-ös azonosítójú társaság id-je a carrier táblából
+	print $repterekSzama;

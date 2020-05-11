@@ -1,0 +1,40 @@
+﻿/**
+ * A Query osztály
+ *
+ * meglatogatottRepterekSzama($legitarsasagAzonosito)
+ *
+ * nevű függvénye:
+ *
+ * A "flight" nevű adattáblában lekérdez minden egyedi airportid-t 
+ * ami a paraméterként megadott társasághoz tartozik.
+ * Visszatérési értéke nem az eredménytábla, hanem az eredménytábla sorainak száma
+ */ 
+
+    public function meglatogatottRepterekSzama($legitarsasag){
+        $lekerdezes = "SELECT DISTINCT airportid FROM flight "
+                . "WHERE carrierid = :l";
+        $select = $this->db->prepare($lekerdezes);
+        $select->bindParam(":l", $legitarsasag);
+        if($select->execute()){
+            return count($select->fetchAll());
+        }
+        else {
+            print "Hiba<br>";
+            print "<pre>";
+            print_r($select->errorInfo());
+            print "</pre>";
+            return -1;
+        }
+    }
+
+/**
+ * Meghívása:
+ *
+ * A $repterekSzama nevű változó értékadásának jobb oldalán
+ */ 
+
+        include_once 'Query.php';
+        $query = new Query();
+
+	$repterekSzama = $query-meglatogatottRepterekSzama(5); // Ahol 5 az 5-ös azonosítójú társaság id-je a carrier táblából
+	print $repterekSzama;

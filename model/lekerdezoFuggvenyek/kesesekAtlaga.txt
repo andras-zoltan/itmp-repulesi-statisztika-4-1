@@ -1,0 +1,42 @@
+﻿/**
+ * A Query osztály
+ *
+ * kesesekAtlaga($legitarsasagAzonosito)
+ *
+ * nevű függvénye:
+ *
+ * A "flight" nevű adattáblában a késések összegét elosztja az összes járatszámmal
+ * A késések az arr_delay oszlopban vannak tárolva
+ * A járatok száma pedg a arr_delay oszlopban vannak tárolva
+ * valamint összeadja azz arr_flights oszlopban.
+ * Visszatérési értéke egy egészre kerekített szám, a lekérdezés eredménytömbjének 0. eleme
+ */ 
+
+    public function kesesekAtlaga($legitarsasag){
+        $lekerdezes = "SELECT SUM(arr_delay)/SUM(arr_flights) FROM flight "
+                . "WHERE carrierid = :l";
+        $select = $this->db->prepare($lekerdezes);
+        $select->bindParam(":l", $legitarsasag);
+        if($select->execute()){
+            return sprintf("%.0f", $select->fetch()[0]);
+        }
+        else {
+            print "Hiba<br>";
+            print "<pre>";
+            print_r($select->errorInfo());
+            print "</pre>";
+            return -1;
+        }
+    }
+
+/**
+ * Meghívása:
+ *
+ * A $perc nevű változó értékadásának jobb oldalán
+ */ 
+
+        include_once 'Query.php';
+        $query = new Query();
+
+	$perc = $query-kesesekAtlaga(5) // Ahol 5 az 5-ös azonosítójú társaság id-je a carrier táblából
+	print "$perc perc";
