@@ -11,10 +11,19 @@ img {
     width: 200px;
 }
 
-a {
-    text-decoration: none;
+.gyerek2 {
+    width: 73vw;
+    margin: auto;
 }
 
-a:hover {
-    background-color: green;
+/*
+* hg
+*/
+.csempe{
+    background-color: #748aa2;
+    background-image: linear-gradient( #748aa2 40%, #c8b8a9 50%, #e8b156 60%);
+    transition-duration: 1s;
+}
+.csempe:hover{
+    background-image: linear-gradient( #94aac2 40%, #e8d8c9 50%, #ffd176 60%);
 }
