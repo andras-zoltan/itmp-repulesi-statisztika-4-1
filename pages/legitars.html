@@ -10,6 +10,7 @@
 
     <title>X Légitársaság</title>
     <link rel="stylesheet" type="text/css" href="../styles/style_legitars.css">
+    <script src="../scripts/list_items.js"></script>  
   </head>
   <body>
       
@@ -27,21 +28,18 @@
                 <li class="breadcrumb-item">
                     <a href="lista.html">Légitársaságok listája</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Data</li>
+                <li class="breadcrumb-item active" aria-current="page" id="data">Data</li>
             </ol>
         </nav>
     </div>
      
     <!--ide jön a konkrét tartalom -->
     <div class="kisgyerek">
-        <h3 class="mt-4 mx-5 mb-3">Légitársaság neve</h3>
+        <h3 class="mt-4 mx-5 mb-3" id="neve">Légitársaság neve</h3>
         <div class="media">
           <img src="../images/hummingbird-1854225_640.jpg" class="align-self-center ml-5 mr-3 rounded-lg shadow" alt="kolibri" title="kolibri">
             
           <div class="media-body ml-3">
-<!--            <h3 class="mt-0 mb-4">Légitársaság neve</h3>-->
-            
-           
             <!-- ide jönnek az adatmezők -->
             <div class="row">
                 <div class="col-12 mb-0">
@@ -110,6 +108,10 @@
           </div>
         </div>
     </div>
+      
+    <script>
+      mutat();
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
