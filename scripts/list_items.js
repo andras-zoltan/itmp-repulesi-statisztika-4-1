@@ -17,7 +17,7 @@ function listItemFeltolt() {
      text=text+"<a href=\"legitars.html\" class=\"list-group-item list-group-item-action\" id=\""+azon+"\">"+tomb[i]+"</a>";*/
     
      //-- de lecserélem buttonra --
-     most=" type=\"button\" class=\"list-group-item list-group-item-action\" onclick=\"melyik(this)\">"+tomb[i]+"</button>";
+     most=" type=\"button\" class=\"list-group-item list-group-item-action list-group-item-primary\" onclick=\"melyik(this)\">"+tomb[i]+"</button>";
     
      text=text+"<button"+most;
 

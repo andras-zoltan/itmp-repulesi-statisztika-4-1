@@ -6,3 +6,7 @@ body {
     width: 80vw;
     margin: auto;
 }
+
+button {
+    background-color: lightblue;
+}
