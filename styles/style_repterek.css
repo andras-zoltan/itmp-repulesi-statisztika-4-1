@@ -6,3 +6,26 @@ body {
     width: 80vw;
     margin: auto;
 }
+
+.gyerek2 {
+    width: 73vw;
+    margin: auto;
+}
+
+.csempe {
+    margin: 1vw;
+}
+
+.card-img {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+input {
+    width: 10vw;
+}
+
+.koord {
+    width: 15vw;
+}

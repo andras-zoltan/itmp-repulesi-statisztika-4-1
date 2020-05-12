@@ -12,23 +12,170 @@
     <link rel="stylesheet" type="text/css" href="../styles/style_repterek.css">
   </head>
   <body>
-  
-     <div class="jumbotron jumbotron-fluid border border-secondary">
-          <div class="container">
-            <h1 class="display-4 text-center font-weight-bold">Repterek</h1>
-          </div>
-     </div>
+      
+    <header>
+         <div class="jumbotron jumbotron-fluid border border-secondary">
+              <div class="container">
+                <h1 class="display-4 text-center font-weight-bold">Repterek</h1>
+              </div>
+         </div>
+    </header>  
       
     <!-- ide jön a navbar -->
-    <div class="gyerek"> 
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../index.html">Főoldal</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Repterek</li>
-          </ol>
-        </nav>
-    </div>  
+    <navbar>
+        <div class="gyerek"> 
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Főoldal</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Repterek</li>
+              </ol>
+            </nav>
+        </div>  
+    </navbar>
       
+    <section id="rept3box">    
+        <!-- ide jön a 3 legforg reptér -->
+        <div class="gyerek2 border-0">
+            <h2>3 Legforgalmasabb Reptér</h2>
+            <div class="card-group">   
+                <!-- első kártya -->
+                <div class="card d-inline m-5 border border-secondary csempe"> 
+                    <img src="../images/beer-mug-2728949_640-removebg-preview.png" class="card-img" alt="kupa">
+                    <h4 class="card-title d-inline mt-3 ml-2">- Reptér 1</h4>
+                    <!-- ide jönnek az adatmezők -->
+                    <div class="media-body d-block ml-3">
+                         <div class="row">
+                            <div class="col-12 mb-0">
+                                <label class="mb-0" for="osszjarat1">
+                                    Az összes járat:
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-8 mt-0 mb-2 ml-3">
+                                <div class="slidecontainer">
+                                    <input class="bg-light" type="number" id="osszjarat1" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-0">
+                                <label class="mb-0" for="kod1">
+                                    Kód:
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-8 mt-0 mb-2 ml-3">
+                                <div class="slidecontainer">
+                                    <input class="bg-light" type="number" id="kod1" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-0">
+                                <label class="mb-0" for="koord1">
+                                    Koordináták:
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-8 mt-0 mb-3 ml-3">
+                                <div class="slidecontainer">
+                                    <input class="bg-light koord" type="text" id="koord1" disabled>
+                                </div>
+                            </div>
+                        </div>              
+                    </div>          
+                </div>           
+                
+                
+                <!-- második kártya -->
+
+                <div class="card d-inline m-5 border border-secondary csempe"> 
+                    <img src="../images/beer-mug-2728949_640-removebg-preview.png" class="card-img" alt="kupa">
+                    <h4 class="card-title d-inline mt-3 ml-2">- Reptér 2</h4>
+                    <!-- ide jönnek az adatmezők -->
+                    <div class="media-body d-block ml-3">
+                         <div class="row">
+                            <div class="col-12 mb-0">
+                                <label class="mb-0" for="osszjarat2">
+                                    Az összes járat:
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-8 mt-0 mb-2 ml-3">
+                                <div class="slidecontainer">
+                                    <input class="bg-light" type="number" id="osszjarat2" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-0">
+                                <label class="mb-0" for="kod2">
+                                    Kód:
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-8 mt-0 mb-2 ml-3">
+                                <div class="slidecontainer">
+                                    <input class="bg-light" type="number" id="kod2" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-0">
+                                <label class="mb-0" for="koord2">
+                                    Koordináták:
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-8 mt-0 mb-3 ml-3">
+                                <div class="slidecontainer">
+                                    <input class="bg-light koord" type="text" id="koord2" disabled>
+                                </div>
+                            </div>
+                        </div>              
+                    </div>          
+                </div>   
+                <!-- harmadik kártya -->
+                <div class="card d-inline m-5 border border-secondary csempe"> 
+                    <img src="../images/beer-mug-2728949_640-removebg-preview.png" class="card-img" alt="kupa">
+                    <h4 class="card-title d-inline mt-3 ml-2">- Reptér 3</h4>
+                    <!-- ide jönnek az adatmezők -->
+                    <div class="media-body d-block ml-3">
+                         <div class="row">
+                            <div class="col-12 mb-0">
+                                <label class="mb-0" for="osszjarat3">
+                                    Az összes járat:
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-8 mt-0 mb-2 ml-3">
+                                <div class="slidecontainer">
+                                    <input class="bg-light" type="number" id="osszjarat3" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-0">
+                                <label class="mb-0" for="kod3">
+                                    Kód:
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-8 mt-0 mb-2 ml-3">
+                                <div class="slidecontainer">
+                                    <input class="bg-light" type="number" id="kod3" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-0">
+                                <label class="mb-0" for="koord3">
+                                    Koordináták:
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-8 mt-0 mb-3 ml-3">
+                                <div class="slidecontainer">
+                                    <input class="bg-light koord" type="text" id="koord3" disabled>
+                                </div>
+                            </div>
+                        </div>              
+                    </div>          
+                </div>           
+            </div>
+        </div>
+    </section>    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
