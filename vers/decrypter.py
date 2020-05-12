@@ -35,14 +35,14 @@ class Decrypter:
         offset = self.calc_offset()
 
         encrypted_text = (self.get_text_content(self.CAESAR_FILE))
-        print("encrypted_text:")
-        print("-" * 20)
-        print(encrypted_text)
+        # print("encrypted_text:")
+        # print("-" * 20)
+        # print(encrypted_text)
 
         self.__plain_text = ''.join(self.decrypt_text(encrypted_text, offset))
-        print("plain text:")
-        print("-" * 20)
-        print(self.__plain_text)
+        # print("plain text:")
+        # print("-" * 20)
+        # print(self.__plain_text)
 
     def calc_offset(self):
         return self.count_xyz() + self.avg_z_count() + self.calc_fibonacci_50()
@@ -94,6 +94,22 @@ class Decrypter:
         except Exception as ex:
             print("Fájl mentése meghiusult!", ex)
 
+    def save_html_text(self, file_name: str) -> None:
+        try:
+            file = open(file_name, mode='w', encoding="UTF-8")
+
+            lines = self.__plain_text.splitlines()
+            title = '<div class="verse-title">' + lines[0] + '</div>\n'
+            author = '<div class="verse-author">' + lines[1] + '</div>\n'
+            verse1, verse2 = '<div class="verse">' + ' '.join(lines[3:11]) + '</div>\n',\
+                             '<div class="verse">' + ' '.join(lines[12:]) + '</div>\n'
+
+            file.writelines([title, author, verse1, verse2])
+
+            file.close()
+        except Exception as ex:
+            print("Fájl mentése meghiusult!", ex)
+
     @staticmethod
     def calculate_fibonacci(n: int) -> int:
         if n <= 1:
@@ -122,6 +138,7 @@ def main():
     decrypter = Decrypter()
     decrypter.decrypt()
     decrypter.save_plain_text('vers.txt')
+    decrypter.save_html_text('vers.html')
 
 
 if __name__ == "__main__":

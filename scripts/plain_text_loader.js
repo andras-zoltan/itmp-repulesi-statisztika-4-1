@@ -1,3 +1,3 @@
-$.get('vers/vers.txt', function (data) {
+$.get('vers/vers.html', function (data) {
     $('#vers').html(data);
 });
