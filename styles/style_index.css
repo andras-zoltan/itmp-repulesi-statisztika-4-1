@@ -27,3 +27,17 @@ img {
 .csempe:hover{
     background-image: linear-gradient( #94aac2 40%, #e8d8c9 50%, #ffd176 60%);
 }
+
+#vers div {
+	margin-bottom: 10px;
+}
+
+#vers .verse-title {
+	font-size: 1.2em;
+	font-weight: bolder;	
+}
+
+#vers .verse {
+    text-align: justify;
+}
+
