@@ -6,3 +6,30 @@ body {
     width: 80vw;
     margin: auto;
 }
+
+.gyerek2 {
+    width: 73vw;
+    margin: auto;
+}
+
+.kisgyerek {
+    width: 70vw;
+    margin: auto;
+}
+
+.csempe {
+/*    margin: 3vw;*/
+/*    max-width: 15vw;*/
+}
+
+.card-img {
+    width: 40px;
+    height: 40px;
+    margin-top: .5vw;
+    margin-bottom: .8vw;
+    margin-left: .5vw;
+}
+
+input {
+    width: 10vw;
+}

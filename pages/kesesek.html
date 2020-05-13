@@ -12,23 +12,101 @@
     <link rel="stylesheet" type="text/css" href="../styles/style_kesesek.css">
   </head>
   <body>
-    
+    <header>
        <div class="jumbotron jumbotron-fluid border border-secondary">
           <div class="container">
             <h1 class="display-4 text-center font-weight-bold">Késések</h1>
           </div>
        </div>
- 
+    </header>
     <!-- ide jön a navbar -->
-    <div class="gyerek"> 
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../index.html">Főoldal</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Késések</li>
-          </ol>
-        </nav>
-    </div>
+    <navbar>
+        <div class="gyerek"> 
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Főoldal</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Késések</li>
+              </ol>
+            </nav>
+        </div>
+    </navbar>
       
+    <section id="kes3box">    
+    <!-- ide jön a 3 min avg késés -->
+        <div class="gyerek2 border-0">
+            <h2>3 Legkisebb Átlagos Késés</h2>
+            <div class="card-group kisgyerek">   
+                <!-- első kártya -->
+                <div class="card d-inline m-5 border border-secondary csempe"> 
+                    <img src="../images/beer-mug-2728949_640-removebg-preview.png" class="card-img" alt="kupa">
+                    <div class="card-title d-inline mt-3">
+                        <h5 class="d-inline">- Southwest Airlines Co.</h5>
+                    </div>
+                    <!-- ide jönnek az adatmezők -->
+                    <div class="media-body d-block ml-3">
+                         <div class="row">
+                            <div class="col-12 mb-0">
+                                <label class="mb-0" for="avgkes1">
+                                    Átlagos késés:
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-8 mt-0 mb-2 ml-3">
+                                <div class="slidecontainer">
+                                    <input class="bg-light" type="number" id="avgkes1" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>          
+                </div>           
+
+                <!-- második kártya -->
+                 <div class="card d-inline m-5 border border-secondary csempe"> 
+                    <img src="../images/beer-mug-2728949_640-removebg-preview.png" class="card-img" alt="kupa">
+                    <div class="card-title d-inline mt-3">
+                        <h5 class="d-inline">- ExpressJet Airlines Inc.</h5>
+                    </div>
+                    <!-- ide jönnek az adatmezők -->
+                    <div class="media-body d-block ml-3">
+                         <div class="row">
+                            <div class="col-12 mb-0">
+                                <label class="mb-0" for="avgkes1">
+                                    Átlagos késés:
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-8 mt-0 mb-2 ml-3">
+                                <div class="slidecontainer">
+                                    <input class="bg-light" type="number" id="avgkes1" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>          
+                </div>           
+                <!-- harmadik kártya -->
+                <div class="card d-inline m-5 border border-secondary csempe"> 
+                    <img src="../images/beer-mug-2728949_640-removebg-preview.png" class="card-img" alt="kupa">
+                    <div class="card-title d-inline mt-3">
+                        <h5 class="d-inline">- Envoy Air</h5>
+                    </div>
+                    <!-- ide jönnek az adatmezők -->
+                    <div class="media-body d-block ml-3">
+                         <div class="row">
+                            <div class="col-12 mb-0">
+                                <label class="mb-0" for="avgkes1">
+                                    Átlagos késés:
+                                </label>
+                            </div>
+                            <div class="col-12 col-md-8 mt-0 mb-2 ml-3">
+                                <div class="slidecontainer">
+                                    <input class="bg-light mb-2" type="number" id="avgkes1" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>          
+                </div> 
+            </div>
+        </div>
+    </section>    
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
