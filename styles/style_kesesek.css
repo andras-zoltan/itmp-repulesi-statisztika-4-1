@@ -33,3 +33,7 @@ body {
 input {
     width: 10vw;
 }
+
+.no-gutters {
+    min-height: 120px;
+}
