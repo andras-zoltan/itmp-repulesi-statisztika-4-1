@@ -38,9 +38,10 @@ function melyik(elmnt) {
 
 //teszt-hez képek cseréje
   var kepek = [];
-  kepek['HTML'] = 'figure-974810_640.jpg';
-  kepek['CSS'] = 'figure-974816_640.jpg';
-  kepek['JavaScript'] = 'smurf-5009586_640.png';
+  //kepek['HTML'] = 'figure-974810_640.jpg';
+  kepek['HTML'] = 'logok/AS.JPG';
+  kepek['CSS'] = 'logok/G4.JPG';
+  kepek['JavaScript'] = 'logok/F9.JPG';
 
 function mutatKep(oldal) {
     
