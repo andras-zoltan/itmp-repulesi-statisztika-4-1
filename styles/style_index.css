@@ -8,7 +8,11 @@ body {
 }
 
 img {
-    width: 200px;
+    margin-top: 60px;
+}
+
+img.lent {
+    margin-top: 80px;
 }
 
 .gyerek2 {
