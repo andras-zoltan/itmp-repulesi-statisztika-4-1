@@ -1,0 +1,52 @@
+﻿/**
+ * A Query osztály
+ *
+ * repterForgalmiDobogo()
+ *
+ * nevű függvénye:
+ *
+ * Az "airport" nevű adattáblában összeadja az arr_flights oszlopok értékeit repterenként
+ * sorbarendezi csökkenőbe és az első három eredményre szűkiti a találatokat.
+ * Visszatérési értéke egy mátrix, 
+ * melyben az egyes vektorok tartalmazzák a repter betűjelét, nevét és az ott összesen leszállt gépek számát.
+ */ 
+
+    public function repterForgalmiDobogo(){
+        $lekerdezes = "SELECT airport.initial, airport.name, SUM(flight.arr_flights) AS db "
+                . "FROM airport INNER JOIN flight ON airport.id=flight.airportid "
+                . "GROUP BY flight.airportid "
+                . "ORDER BY db DESC LIMIT 0, 3";
+        $select = $this->db->prepare($lekerdezes);
+        if($select->execute()){
+            return $select->fetchAll();
+        }
+        else {
+            print "Hiba<br>";
+            print "<pre>";
+            print_r($select->errorInfo());
+            print "</pre>";
+            return -1;
+        }
+    }
+
+/**
+ * Meghívása:
+ *
+ * Az $airports nevű változó értékadásának jobb oldalán
+ */ 
+
+include_once '../server/Query.php';
+$query = new Query();
+$airports = $query->repterForgalmiDobogo();
+$i=0;
+$coords = array("33°38'26.6''N 84°25'39.7''W", "41°58'33.2''N 87°54'28.4''W", "32°53'59.3''N 97°2'33.1''W");
+
+foreach ($airports as $airport) {
+    print "<!-- $i. kártya -->\n";
+    print "Reptér betűjele: $airport[0]";
+    print "Reptér neve: $airport[1]";
+    print "Összes járat: $airport[2]";
+    print "Koordináta: $coords[$i]";
+    $i++;
+    }
+

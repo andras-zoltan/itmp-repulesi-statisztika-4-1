@@ -1,0 +1,49 @@
+﻿/**
+ * A Query osztály
+ *
+ * tarsasagKesesekDobogo()
+ *
+ * nevű függvénye:
+ *
+ * Az összekapcsolt "flight" és "carrier" nevű adattáblákban 
+ * összeadja az flight.arr_delay oszlopok értékeit társaságonként
+ * sorbarendezi növekvőb és az első három eredményre szűkiti a találatokat.
+ * Visszatérési értéke egy mátrix, 
+ * melyben az egyes vektorok tartalmazzák a társaság nevét és az összesen késett percek számát.
+ */ 
+
+public function tarsasagKesesekDobogo(){
+        $lekerdezes = "SELECT carrier.name, SUM(flight.arr_delay)/SUM(flight.arr_flights) as perc FROM flight "
+                . "INNER JOIN carrier ON flight.carrierid=carrier.id "
+                . "GROUP BY flight.carrierid ORDER BY perc LIMIT 0, 3";
+        $select = $this->db->prepare($lekerdezes);
+        if($select->execute()){
+            return $select->fetchAll();
+        }
+        else {
+            print "Hiba<br>";
+            print "<pre>";
+            print_r($select->errorInfo());
+            print "</pre>";
+            return -1;
+        }
+    }
+
+/**
+ * Meghívása:
+ *
+ * A $carriers nevű változó értékadásának jobb oldalán
+ */ 
+
+
+include_once '../server/Query.php';
+$query = new Query();
+$carriers = $query->tarsasagKesesekDobogo();
+$i=1;
+foreach ($carriers as $carrier) {
+    print "<!-- $i. kártya -->\n";
+    print "Társaság neve: $carrier[0]";
+    print "Átlagos késés (perc): $carrier[1]";
+    $i++;
+    }
+
