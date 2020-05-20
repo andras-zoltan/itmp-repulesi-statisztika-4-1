@@ -30,3 +30,7 @@ input {
 .koord {
     width: 15vw;
 }
+
+.no-gutters {
+    min-height: 120px;
+}
