@@ -14,6 +14,7 @@ body {
 
 .csempe {
     margin: 1vw;
+    min-width: 20vw;
 }
 
 .card-img {
