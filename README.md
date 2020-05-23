@@ -2,52 +2,60 @@
 
 #### Backed feladatok
 
-**1.	A kapott csv ·llom·ny feldolgoz·sa**
+**1.	A kapott csv ÔøΩllomÔøΩny feldolgozÔøΩsa**
 
-A flight.csv 22 779 sornyi adatot tartalmaz. Minden sorban 22 adat vesszıvel elv·lasztva. Ezt a karaktert szepar·torkÈnt haszn·lva fel kellett darabolni a sorokat, hogy egyedi adatokat kapjunk. 
+A flight.csv 22 779 sornyi adatot tartalmaz. Minden sorban 22 adat vesszÔøΩvel elvÔøΩlasztva. Ezt a karaktert szeparÔøΩtorkÔøΩnt hasznÔøΩlva fel kellett darabolni a sorokat, hogy egyedi adatokat kapjunk. 
 
-Ezt megnehezÌtı tÈnyezık:
+Ezt megnehezÔøΩtÔøΩ tÔøΩnyezÔøΩk:
 
--	az rep¸lıtÈr rˆvidÌtÈse Ès v·rosa egy idÈzıjelben szerepelt a rep¸lıtÈr nevÈvel.
--	nÈh·ny sorban hi·nyzÛ adatok
--	egy-egy sorban mÈg nÈh·ny szepar·tor is hi·nyzott
+-	az repÔøΩlÔøΩtÔøΩr rÔøΩvidÔøΩtÔøΩse ÔøΩs vÔøΩrosa egy idÔøΩzÔøΩjelben szerepelt a repÔøΩlÔøΩtÔøΩr nevÔøΩvel.
+-	nÔøΩhÔøΩny sorban hiÔøΩnyzÔøΩ adatok
+-	egy-egy sorban mÔøΩg nÔøΩhÔøΩny szeparÔøΩtor is hiÔøΩnyzott
 
-**2.	Adatfeldolgoz·s mÛdj·nak kiv·laszt·sa**
+**2.	AdatfeldolgozÔøΩs mÔøΩdjÔøΩnak kivÔøΩlasztÔøΩsa**
 
-Mivel weben megjelenı alkalmaz·srÛl van szÛ, legcÈlszer˚bbnek a MySQL + PHP megold·s t˚nt. Ezek segÌtsÈgÈvel a feladatban kÈrt eredmÈnyek egyetlen jÛl megÌrt SQL paranccsal hatÈkonyan Ès gyorsan megjelenthetık ˙gy, hogy az SQL lekÈrdezÈs eredmÈnyt·bl·ja egy PHP m·trixba ker¸l. Ennek tartalma alapj·n pedig legener·ljuk a sz¸ksÈges HTML kÛdot.
+Mivel weben megjelenÔøΩ alkalmazÔøΩsrÔøΩl van szÔøΩ, legcÔøΩlszerÔøΩbbnek a MySQL + PHP megoldÔøΩs tÔøΩnt. Ezek segÔøΩtsÔøΩgÔøΩvel a feladatban kÔøΩrt eredmÔøΩnyek egyetlen jÔøΩl megÔøΩrt SQL paranccsal hatÔøΩkonyan ÔøΩs gyorsan megjelenthetÔøΩk ÔøΩgy, hogy az SQL lekÔøΩrdezÔøΩs eredmÔøΩnytÔøΩblÔøΩja egy PHP mÔøΩtrixba kerÔøΩl. Ennek tartalma alapjÔøΩn pedig legenerÔøΩljuk a szÔøΩksÔøΩges HTML kÔøΩdot.
 
-**3.	MySQL adatb·zis lÈtrehoz·sa**
+**3.	MySQL adatbÔøΩzis lÔøΩtrehozÔøΩsa**
 
-A feladat kÈrte tˆbb eredmÈny megjelenÌtÈsÈt ezen adatok alapj·n. CÈlszer˚ volt ezÈrt adatb·zisba tenni azokat. Az adatb·zisnak viszont 3. norm·lform·ban kell lennie. EzÈrt a redund·ns ÈrtÈkeket tartalmazÛ oszlopokbÛl k¸lˆn t·bl·k kÈsz¸ltek. 
+A feladat kÔøΩrte tÔøΩbb eredmÔøΩny megjelenÔøΩtÔøΩsÔøΩt ezen adatok alapjÔøΩn. CÔøΩlszerÔøΩ volt ezÔøΩrt adatbÔøΩzisba tenni azokat. Az adatbÔøΩzisnak viszont 3. normÔøΩlformÔøΩban kell lennie. EzÔøΩrt a redundÔøΩns ÔøΩrtÔøΩkeket tartalmazÔøΩ oszlopokbÔøΩl kÔøΩlÔøΩn tÔøΩblÔøΩk kÔøΩszÔøΩltek. 
 
-![adatb·zis](images/database-view.png "adatb·zis")
+![adatbÔøΩzis](images/database-view.png "adatbÔøΩzis")
 
 
-**4.	Adatb·ziskapcsolat kialakÌt·sa**
+**4.	AdatbÔøΩziskapcsolat kialakÔøΩtÔøΩsa**
 
-A kapcsolat fel·llÌt·sa egy PHP oszt·ly segÌtsÈgÈvel tˆrtÈt a PDO oszt·ly kiterjsztÈsÈvel.
-Neve: Database.php, tartalma megtekinthetı a server mapp·ban:
+A kapcsolat felÔøΩllÔøΩtÔøΩsa egy PHP osztÔøΩly segÔøΩtsÔøΩgÔøΩvel tÔøΩrtÔøΩt a PDO osztÔøΩly kiterjsztÔøΩsÔøΩvel.
+Neve: Database.php, tartalma megtekinthetÔøΩ a server mappÔøΩban:
 
-**5.	Feladatmegold·sok**
+**5.	FeladatmegoldÔøΩsok**
 
-MegoldandÛ feladatok:
--	minden lÈgitarsas·g felsorol·sa
--	egy kiv·lasztott lÈgit·rsas·g k¸lˆnfÈle adatainak megjelenÌtÈse
--	top 3 reptÈr fogadott j·ratok sz·ma alapj·n
--	top 3 lÈgit·rsas·g kÈsÈs alapj·n
+MegoldandÔøΩ feladatok:
+-	minden lÔøΩgitarsasÔøΩg felsorolÔøΩsa
+-	egy kivÔøΩlasztott lÔøΩgitÔøΩrsasÔøΩg kÔøΩlÔøΩnfÔøΩle adatainak megjelenÔøΩtÔøΩse
+-	top 3 reptÔøΩr fogadott jÔøΩratok szÔøΩma alapjÔøΩn
+-	top 3 lÔøΩgitÔøΩrsasÔøΩg kÔøΩsÔøΩs alapjÔøΩn
 
-Minden feladatra Ès az azokon bel¸li rÈszeredmÈnyek lekÈrdezÈsÈre k¸lˆn f¸ggvÈny kÈsz¸lt. Ezek egy PHP oszt·lyban ker¸ltek kidolgoz·sra. Neve: Query.php, tartalma megtekinthetı a server mapp·ban:
+Minden feladatra ÔøΩs az azokon belÔøΩli rÔøΩszeredmÔøΩnyek lekÔøΩrdezÔøΩsÔøΩre kÔøΩlÔøΩn fÔøΩggvÔøΩny kÔøΩszÔøΩlt. Ezek egy PHP osztÔøΩlyban kerÔøΩltek kidolgozÔøΩsra. Neve: Query.php, tartalma megtekinthetÔøΩ a server mappÔøΩban:
 
 **6.	PHP**
 
-Az idıkˆzben elkÈsz¸lt html oldalak lecserÈlÈse php oldalakra, ahol a f¸ggvÈnyhÌv·sok megtˆrtÈntek, majd a visszaadott eredmÈnyek a megtervezett arculatnak megfelelıen dinamikusan megjelentek.
-A PHP f·jlok megtekinthetık a pages mapp·ban
+Az idÔøΩkÔøΩzben elkÔøΩszÔøΩlt html oldalak lecserÔøΩlÔøΩse php oldalakra, ahol a fÔøΩggvÔøΩnyhÔøΩvÔøΩsok megtÔøΩrtÔøΩntek, majd a visszaadott eredmÔøΩnyek a megtervezett arculatnak megfelelÔøΩen dinamikusan megjelentek.
+A PHP fÔøΩjlok megtekinthetÔøΩk a pages mappÔøΩban
 
-**7.	KitelepÌtÈs**
+**7.	KitelepÔøΩtÔøΩs**
 
-Az elkÈsz¸lt weboldal nyilv·nos url cÌmen valÛ megjelenÌtÈsÈhez ingyenes webt·rhelyre volt sz¸ksÈg adatb·zis szolg·ltat·ssal. A v·laszt·s a www.000webhost.com oldalra esett.
-Regisztr·ciÛ ut·n PhpMyAdmin Ès webes file upload szolg·ltat·st ny˙jt korl·tozott mÈretben. Ide ker¸lt fel az adatb·zis Ès weboldalhoz tartozÛ ·llom·nyok. 
+Az elkÔøΩszÔøΩlt weboldal nyilvÔøΩnos url cÔøΩmen valÔøΩ megjelenÔøΩtÔøΩsÔøΩhez ingyenes webtÔøΩrhelyre volt szÔøΩksÔøΩg adatbÔøΩzis szolgÔøΩltatÔøΩssal. A vÔøΩlasztÔøΩs a www.000webhost.com oldalra esett.
+RegisztrÔøΩciÔøΩ utÔøΩn PhpMyAdmin ÔøΩs webes file upload szolgÔøΩltatÔøΩst nyÔøΩjt korlÔøΩtozott mÔøΩretben. Ide kerÔøΩlt fel az adatbÔøΩzis ÔøΩs weboldalhoz tartozÔøΩ ÔøΩllomÔøΩnyok. 
 
-A weboldalt Ìgy b·rki megtekintheti az al·bbi cÌmen: http://americanflights.000webhostapp.com/
+A weboldalt ÔøΩgy bÔøΩrki megtekintheti az alÔøΩbbi cÔøΩmen: http://americanflights.000webhostapp.com/
 
 
+##Python
+
+###Python-r√≥l r√∂viden
+> A Python egy √°ltal√°nos c√©l√∫, nagyon magas szint≈± programoz√°si nyelv, melyet Guido van Rossum holland programoz√≥ kezdett el fejleszteni 1989 v√©g√©n, majd hozott nyilv√°noss√°gra 1991-ben. A nyelv tervez√©si filoz√≥fi√°ja az olvashat√≥s√°got √©s a programoz√≥i munka megk√∂nny√≠t√©s√©t helyezi el≈ët√©rbe a fut√°si sebess√©ggel szemben.
+
+> A Python t√∂bbek k√∂z√∂tt a funkcion√°lis, az objektumorient√°lt, az imperat√≠v √©s a procedur√°lis programoz√°si paradigm√°kat t√°mogatja. Dinamikus t√≠pusokat √©s automatikus mem√≥riakezel√©st haszn√°l, ilyen szempontb√≥l hasonl√≠t a Scheme, Perl √©s Ruby nyelvekhez, emellett szigor√∫ t√≠pusrendszerrel rendelkezik.
+
+> A Python √∫gynevezett interpreteres nyelv, ami azt jelenti, hogy nincs k√ºl√∂nv√°lasztva a forr√°s- √©s t√°rgyk√≥d, a meg√≠rt program m√°ris futtathat√≥, ha rendelkez√ºnk a Python √©rtelmez≈ëvel. A Python √©rtelmez≈ët sz√°mos g√©pt√≠pusra √©s oper√°ci√≥s rendszerre elk√©sz√≠tett√©k, tov√°bb√° sz√°mtalan kieg√©sz√≠t≈ë k√∂nyvt√°r k√©sz√ºlt hozz√°, √≠gy rendk√≠v√ºl sz√©les k√∂rben haszn√°lhat√≥v√° v√°lt.
