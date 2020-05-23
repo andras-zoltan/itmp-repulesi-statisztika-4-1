@@ -6,11 +6,11 @@ body {
     width: 80vw;
     margin: auto;
 }
-
-img {
+.carrier-logo {
     width: 300px;
     height: 300px;
 }
+
 
 .media-body {
     margin-right: 10vw;

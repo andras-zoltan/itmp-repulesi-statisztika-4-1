@@ -1,13 +1,13 @@
-/**
- * A Query oszt·ly
+Ôªø/**
+ * A Query oszt√°ly
  *
  * osszesJarat($legitarsasagAzonosito)
  *
- * nev˚ f¸ggvÈnye:
+ * nev≈± f√ºggv√©nye:
  *
- * A "flight" nev˚ adatt·bl·ban ˆsszeadja az arr_flights oszlopok ÈrtÈkeit azon sorokban,
- * amelyekben a carrierid megegyezik a paramÈterkÈnt kapott v·ltozÛ ÈrtÈkÈvel.
- * VisszatÈrÈsi ÈrtÈke egy egÈsz sz·m, a lekÈrdezÈs eredmÈnytˆmbjÈnek 0. eleme
+ * A "flight" nev≈± adatt√°bl√°ban √∂sszeadja az arr_flights oszlopok √©rt√©keit azon sorokban,
+ * amelyekben a carrierid megegyezik a param√©terk√©nt kapott v√°ltoz√≥ √©rt√©k√©vel.
+ * Visszat√©r√©si √©rt√©ke egy eg√©sz sz√°m, a lek√©rdez√©s eredm√©nyt√∂mbj√©nek 0. eleme
  */ 
 
     public function osszesJarat($legitarsasag){
@@ -28,12 +28,12 @@
     }
 
 /**
- * MeghÌv·sa:
+ * Megh√≠v√°sa:
  *
- * A $sum nev˚ v·ltozÛ ÈrtÈkad·s·nak jobb oldal·n
+ * A $sum nev≈± v√°ltoz√≥ √©rt√©kad√°s√°nak jobb oldal√°n
  */ 
 
         include_once 'Query.php';
         $query = new Query();
 
-	$sum = $query->osszesJarat(5) // Ahol 5 az 5-ˆs azonosÌtÛj˙ t·rsas·g id-je a carrier t·bl·bÛl
+	$sum = $query->osszesJarat(5); // Ahol 5 az 5-√∂s azonos√≠t√≥j√∫ t√°rsas√°g id-je a carrier t√°bl√°b√≥l

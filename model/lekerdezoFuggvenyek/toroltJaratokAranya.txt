@@ -1,15 +1,15 @@
-/**
- * A Query oszt·ly
+Ôªø/**
+ * A Query oszt√°ly
  *
  * toroltJaratokAranya($legitarsasagAzonosito)
  *
- * nev˚ f¸ggvÈnye:
+ * nev≈± f√ºggv√©nye:
  *
- * A "flight" nev˚ adatt·bl·ban ˆsszeadja az arr_cancelled oszlopok ÈrtÈkeit
- * valamint ˆsszeadja az arr_flights oszlopok ÈrtÈkeit azon sorokban,
- * amelyekben a carrierid megegyezik a paramÈterkÈnt kapott v·ltozÛ ÈrtÈkÈvel,
- * majd a kettı h·nyados·t megszorozza 100-zal.
- * VisszatÈrÈsi ÈrtÈke egy 1 tizedesjegy pontoss·g˙ valÛs sz·m, a lekÈrdezÈs eredmÈnytˆmbjÈnek 0. eleme
+ * A "flight" nev≈± adatt√°bl√°ban √∂sszeadja az arr_cancelled oszlopok √©rt√©keit
+ * valamint √∂sszeadja az arr_flights oszlopok √©rt√©keit azon sorokban,
+ * amelyekben a carrierid megegyezik a param√©terk√©nt kapott v√°ltoz√≥ √©rt√©k√©vel,
+ * majd a kett≈ë h√°nyados√°t megszorozza 100-zal.
+ * Visszat√©r√©si √©rt√©ke egy 1 tizedesjegy pontoss√°g√∫ val√≥s sz√°m, a lek√©rdez√©s eredm√©nyt√∂mbj√©nek 0. eleme
  */ 
 
     public function toroltJaratokAranya($legitarsasag){
@@ -30,13 +30,13 @@
     }
 
 /**
- * MeghÌv·sa:
+ * Megh√≠v√°sa:
  *
- * A $arany nev˚ v·ltozÛ ÈrtÈkad·s·nak jobb oldal·n
+ * A $arany nev≈± v√°ltoz√≥ √©rt√©kad√°s√°nak jobb oldal√°n
  */ 
 
         include_once 'Query.php';
         $query = new Query();
 
-	$arany = $query->toroltJaratokAranya(5) // Ahol 5 az 5-ˆs azonosÌtÛj˙ t·rsas·g id-je a carrier t·bl·bÛl
+	$arany = $query->toroltJaratokAranya(5); // Ahol 5 az 5-√∂s azonos√≠t√≥j√∫ t√°rsas√°g id-je a carrier t√°bl√°b√≥l
 	print "$arany%";

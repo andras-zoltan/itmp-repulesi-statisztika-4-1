@@ -1,12 +1,12 @@
-/**
- * A Query osztály
+ï»¿/**
+ * A Query osztÃ¡ly
  *
  * legitarsasagokNevei()
  *
- * nevû függvénye:
+ * nevÅ± fÃ¼ggvÃ©nye:
  *
- * A "carrier" nevû adattáblából a légitársaságok neveit olvassa ki abc sorrendben
- * Visszatérési értéke egy mátrix, melyben minden vektornak egyetlen eleme van: a társaság neve
+ * A "carrier" nevÅ± adattÃ¡blÃ¡bÃ³l a lÃ©gitÃ¡rsasÃ¡gok neveit olvassa ki abc sorrendben
+ * VisszatÃ©rÃ©si Ã©rtÃ©ke egy mÃ¡trix, melyben minden vektornak egyetlen eleme van: a tÃ¡rsasÃ¡g neve
  */ 
 
     public function legitarsasagokNevei(){
@@ -24,11 +24,11 @@
     }
 
 /**
- * Meghívása:
+ * MeghÃ­vÃ¡sa:
  *
- * A $carriers nevû mátrix értékadásának jobb oldalán
+ * A $carriers nevÅ± mÃ¡trix Ã©rtÃ©kadÃ¡sÃ¡nak jobb oldalÃ¡n
  *
- * A mátrix elemei vektorok, melyek egyetlen elembõl állnak: a tárasaság neve
+ * A mÃ¡trix elemei vektorok, melyek egyetlen elembÅ‘l Ã¡llnak: a tÃ¡rasasÃ¡g neve
  */ 
 
         include_once 'Query.php';
