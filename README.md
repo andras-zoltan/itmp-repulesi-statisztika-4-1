@@ -8,9 +8,9 @@ A flight.csv 22 779 sornyi adatot tartalmaz. Minden sorban 22 adat vesszõvel elv
 
 Ezt megnehezítõ tényezõk:
 
-.*	az repülõtér rövidítése és városa egy idézõjelben szerepelt a repülõtér nevével.
-.*	néhány sorban hiányzó adatok
-.*	egy-egy sorban még néhány szeparátor is hiányzott
+-	az repülõtér rövidítése és városa egy idézõjelben szerepelt a repülõtér nevével.
+-	néhány sorban hiányzó adatok
+-	egy-egy sorban még néhány szeparátor is hiányzott
 
 **2.	Adatfeldolgozás módjának kiválasztása**
 
@@ -31,9 +31,9 @@ Neve: Database.php, tartalma megtekinthetõ a server mappában:
 **5.	Feladatmegoldások**
 
 Megoldandó feladatok:
-.*	minden légitarsaság felsorolása
-.*	egy kiválasztott légitársaság különféle adatainak megjelenítése
-.*	top 3 reptér fogadott járatok száma alapján
+-	minden légitarsaság felsorolása
+-	egy kiválasztott légitársaság különféle adatainak megjelenítése
+-	top 3 reptér fogadott járatok száma alapján
 -	top 3 légitársaság késés alapján
 
 Minden feladatra és az azokon belüli részeredmények lekérdezésére külön függvény készült. Ezek egy PHP osztályban kerültek kidolgozásra. Neve: Query.php, tartalma megtekinthetõ a server mappában:
@@ -48,8 +48,6 @@ A PHP fájlok megtekinthetõk a pages mappában
 Az elkészült weboldal nyilvános url címen való megjelenítéséhez ingyenes webtárhelyre volt szükség adatbázis szolgáltatással. A választás a www.000webhost.com oldalra esett.
 Regisztráció után PhpMyAdmin és webes file upload szolgáltatást nyújt korlátozott méretben. Ide került fel az adatbázis és weboldalhoz tartozó állományok. 
 
-A weboldalt így bárki megtekintheti az alábbi címen:
-
-[http://americanflights.000webhostapp.com/]: http://americanflights.000webhostapp.com/
+A weboldalt így bárki megtekintheti az alábbi címen: http://americanflights.000webhostapp.com/
 
 
