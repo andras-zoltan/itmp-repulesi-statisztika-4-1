@@ -14,6 +14,7 @@ body {
 
 .csempe {
     margin: 1vw;
+    min-width: 20vw;
 }
 
 .card-img {
@@ -29,4 +30,8 @@ input {
 
 .koord {
     width: 15vw;
+}
+
+.no-gutters {
+    min-height: 120px;
 }

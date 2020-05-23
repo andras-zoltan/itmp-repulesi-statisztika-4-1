@@ -12,7 +12,7 @@ img {
 }
 
 img.lent {
-    margin-top: 80px;
+    margin-top: 100px;
 }
 
 .gyerek2 {
@@ -28,6 +28,7 @@ img.lent {
     background-image: linear-gradient( #748aa2 40%, #c8b8a9 50%, #e8b156 60%);
     transition-duration: 1s;
 }
+
 .csempe:hover{
     background-image: linear-gradient( #94aac2 40%, #e8d8c9 50%, #ffd176 60%);
 }
